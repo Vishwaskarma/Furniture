@@ -1,0 +1,217 @@
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Hammer, Mail, Phone, User, MessageSquare, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '', phone: '', email: '', message: ''
+  });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = ['Home', 'About', 'Services', 'Gallery', 'Contact'];
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setSending(true);
+
+    // Yeh 3 IDs baad mein daal dena
+    emailjs.sendForm(
+      'YOUR_SERVICE_ID',     // ← yahan daal
+      'YOUR_TEMPLATE_ID',    // ← yahan daal
+      e.target,
+      'YOUR_PUBLIC_KEY'      // ← yahan daal
+    )
+    .then(() => {
+      setSent(true);
+      setTimeout(() => {
+        setShowPopup(false);
+        setSent(false);
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      }, 2000);
+    })
+    .finally(() => setSending(false));
+  };
+
+  return (
+    <>
+      <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-xl shadow-2xl border-b border-orange-500/20' : 'bg-gradient-to-b from-black/90 to-transparent backdrop-blur-sm'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <div className="flex items-center space-x-3 group cursor-pointer">
+              <div className="relative">
+                <div className="absolute inset-0 bg-orange-500 blur-xl opacity-40 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all">
+                  <Hammer className="h-6 w-6 text-white" />
+                </div>
+              </div>
+              <div>
+                <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-transparent">
+                  WoodCraft
+                </span>
+                <span className="text-[10px] text-gray-600 -mt-1 tracking-wider uppercase">Masterpieces</span>
+              </div>
+            </div>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-1">
+              {navItems.map((item, i) => (
+                <a key={item} href={`#${item.toLowerCase()}`}
+                  className="relative px-4 py-2 text-gray-400 hover:text-orange-400 transition-all font-medium group"
+                  style={{ animationDelay: `${i * 100}ms` }}>
+                  <span className="relative z-10">{item}</span>
+                  <span className="absolute inset-0 bg-orange-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent group-hover:w-full transition-all"></span>
+                </a>
+              ))}
+              <button
+                onClick={() => setShowPopup(true)}
+                className="ml-4 px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-bold hover:shadow-lg hover:shadow-orange-500/50 hover:scale-105 transition-all flex items-center gap-2"
+              >
+                <Mail className="h-4 w-4" />
+                ENQUIRY
+              </button>
+            </div>
+
+            {/* Mobile */}
+            <button className="md:hidden p-2 text-gray-400 hover:text-orange-400"
+              onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className={`md:hidden overflow-hidden transition-all ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
+            <div className="py-4 space-y-1">
+              {navItems.map((item) => (
+                <a key={item} href={`#${item.toLowerCase()}`}
+                  className="block px-4 py-3 text-gray-400 hover:text-orange-400 hover:bg-orange-500/10 rounded-lg"
+                  onClick={() => setIsOpen(false)}>
+                  {item}
+                </a>
+              ))}
+              <button
+                onClick={() => { setShowPopup(true); setIsOpen(false); }}
+                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-bold flex items-center justify-center gap-2">
+                <Mail className="h-5 w-5" /> ENQUIRY
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* ENQUIRY POPUP */}
+      {showPopup && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <div className="relative w-full max-w-md bg-gradient-to-br from-zinc-900 to-black border border-orange-500/30 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            {/* Orange Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/10 blur-3xl"></div>
+            
+            <div className="relative p-8">
+              <button
+                onClick={() => setShowPopup(false)}
+                className="absolute top-4 right-4 p-2 hover:bg-orange-500/20 rounded-full transition-all">
+                <X className="h-5 w-5 text-gray-400" />
+              </button>
+
+              <div className="text-center mb-6">
+                <div className="inline-flex p-4 bg-orange-500/20 rounded-full mb-4">
+                  <Mail className="h-10 w-10 text-orange-400" />
+                </div>
+                <h2 className="text-3xl font-black text-white">Free Design Enquiry</h2>
+                <p className="text-gray-400 mt-2">Reply in 2 hours • 100% Free</p>
+              </div>
+
+              <form onSubmit={sendEmail} className="space-y-4">
+                <input type="hidden" name="to_name" value="WoodCraft Team" />
+                
+                <div className="relative">
+                  <User className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
+                  <input
+                    type="text" name="name" required
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    placeholder="Your Name"
+                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all"
+                  />
+                </div>
+
+                <div className="relative">
+                  <Phone className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
+                  <input
+                    type="tel" name="phone" required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    placeholder="Phone Number"
+                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all"
+                  />
+                </div>
+
+                <div className="relative">
+                  <Mail className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
+                  <input
+                    type="email" name="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    placeholder="Email (optional)"
+                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all"
+                  />
+                </div>
+
+                <div className="relative">
+                  <MessageSquare className="absolute left-top-3 h-5 w-5 text-orange-400" />
+                  <textarea
+                    name="message" rows="3"
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    placeholder="Bedroom ya kitchen?"
+                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black rounded-xl hover:shadow-lg hover:shadow-orange-500/50 hover:scale-105 transition-all flex items-center justify-center gap-3 disabled:opacity-70"
+                >
+                  {sending ? (
+                    <>Sending...</>
+                  ) : sent ? (
+                    <>Sent! Check WhatsApp</>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5" />
+                      SEND ENQUIRY
+                    </>
+                  )}
+                </button>
+              </form>
+
+              <p className="text-center text-xs text-gray-500 mt-4">
+                We reply on WhatsApp within 2 hours
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(-20px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+      `}</style>
+    </>
+  );
+}

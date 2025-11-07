@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GOLD-BLACK ROYAL THEME – 100% WORKING */
+@layer base {
+  :root {
+    --gold-400: #fbbf24;
+    --gold-500: #f59e0b;
+    --gold-600: #d97706;
+    --gold-glow: 0 0 40px rgba(251, 191, 36, 0.5);
+  }
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  /* Gold Text / BG */
+  .text-gold { color: #fbbf24; }
+  .bg-gold   { background-color: #f59e0b; }
+  .border-gold { border-color: #d97706; }
+
+  /* Ring & Shadow – FIXED! */
+  .ring-gold { 
+    @apply ring-4 ring-[#f59e0b30];
+  }
+  .shadow-gold { 
+    box-shadow: var(--gold-glow); 
+  }
+
+  /* Hover Shine */
+  .hover-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .hover-shine::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251,191,36,0.3), transparent);
+    transition: 0.7s;
+  }
+  .hover-shine:hover::before { left: 100%; }
+
+  /* Floating Badge */
+  @keyframes float {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50%     { transform: translateY(-12px) rotate(6deg); }
+  }
+  .badge-float { animation: float 4s ease-in-out infinite; }
+
+  /* Gradient Text */
+  .gradient-gold {
+    @apply bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 bg-clip-text text-transparent;
+  }
+
+  /* GOLD Scrollbar */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #fbbf24, #d97706);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #f59e0b, #b45309);
+  }
+}
