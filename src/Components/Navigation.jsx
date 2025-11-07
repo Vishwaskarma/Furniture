@@ -25,12 +25,11 @@ export default function Navigation() {
     e.preventDefault();
     setSending(true);
 
-    // Yeh 3 IDs baad mein daal dena
     emailjs.sendForm(
-      'YOUR_SERVICE_ID',     // ← yahan daal
-      'YOUR_TEMPLATE_ID',    // ← yahan daal
+      'YOUR_SERVICE_ID',
+      'YOUR_TEMPLATE_ID',
       e.target,
-      'YOUR_PUBLIC_KEY'      // ← yahan daal
+      'YOUR_PUBLIC_KEY'
     )
     .then(() => {
       setSent(true);
@@ -48,31 +47,43 @@ export default function Navigation() {
       <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-xl shadow-2xl border-b border-orange-500/20' : 'bg-gradient-to-b from-black/90 to-transparent backdrop-blur-sm'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex items-center space-x-3 group cursor-pointer">
+            
+            {/* === MODERN & ELEGANT LOGO === */}
+            <div className="flex items-center group cursor-pointer">
               <div className="relative">
-                <div className="absolute inset-0 bg-orange-500 blur-xl opacity-40 group-hover:opacity-70 transition-opacity"></div>
-                <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all">
-                  <Hammer className="h-6 w-6 text-white" />
+                {/* Outer Glow */}
+                <div className="absolute inset-0 bg-orange-500 blur-2xl opacity-50 group-hover:opacity-80 transition-all duration-500 scale-110"></div>
+                
+                {/* Hammer Icon with 3D Effect */}
+                <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 rounded-2xl shadow-2xl transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300">
+                  <Hammer className="h-7 w-7 text-white drop-shadow-md" />
                 </div>
               </div>
-              <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-transparent">
-                  WoodCraft
-                </span>
-                <span className="text-[10px] text-gray-600 -mt-1 tracking-wider uppercase">Masterpieces</span>
+
+              {/* Name & Tagline */}
+              <div className="ml-3 flex flex-col justify-center">
+                <h1 className="text-2xl font-black bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-transparent leading-tight tracking-tight">
+                  Dinesh Vishwakarma
+                </h1>
+                <p className="text-[9px] font-bold text-orange-400/80 tracking-widest uppercase letter-spacing-widest opacity-90">
+                  Masterpieces
+                </p>
               </div>
             </div>
+            {/* === END LOGO === */}
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-1">
               {navItems.map((item, i) => (
-                <a key={item} href={`#${item.toLowerCase()}`}
-                  className="relative px-4 py-2 text-gray-400 hover:text-orange-400 transition-all font-medium group"
-                  style={{ animationDelay: `${i * 100}ms` }}>
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`}
+                  className="relative px-4 py-2 text-gray-400 hover:text-orange-400 transition-all font-medium group overflow-hidden"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
                   <span className="relative z-10">{item}</span>
                   <span className="absolute inset-0 bg-orange-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent group-hover:w-full transition-all"></span>
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent group-hover:w-full transition-all duration-300"></span>
                 </a>
               ))}
               <button
@@ -84,26 +95,32 @@ export default function Navigation() {
               </button>
             </div>
 
-            {/* Mobile */}
-            <button className="md:hidden p-2 text-gray-400 hover:text-orange-400"
-              onClick={() => setIsOpen(!isOpen)}>
+            {/* Mobile Toggle */}
+            <button 
+              className="md:hidden p-2 text-gray-400 hover:text-orange-400"
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
           {/* Mobile Menu */}
-          <div className={`md:hidden overflow-hidden transition-all ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
+          <div className={`md:hidden overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
             <div className="py-4 space-y-1">
               {navItems.map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`}
-                  className="block px-4 py-3 text-gray-400 hover:text-orange-400 hover:bg-orange-500/10 rounded-lg"
-                  onClick={() => setIsOpen(false)}>
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`}
+                  className="block px-4 py-3 text-gray-400 hover:text-orange-400 hover:bg-orange-500/10 rounded-lg transition-all"
+                  onClick={() => setIsOpen(false)}
+                >
                   {item}
                 </a>
               ))}
               <button
                 onClick={() => { setShowPopup(true); setIsOpen(false); }}
-                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-bold flex items-center justify-center gap-2">
+                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-bold flex items-center justify-center gap-2"
+              >
                 <Mail className="h-5 w-5" /> ENQUIRY
               </button>
             </div>
@@ -115,13 +132,13 @@ export default function Navigation() {
       {showPopup && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
           <div className="relative w-full max-w-md bg-gradient-to-br from-zinc-900 to-black border border-orange-500/30 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
-            {/* Orange Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/10 blur-3xl"></div>
             
             <div className="relative p-8">
               <button
                 onClick={() => setShowPopup(false)}
-                className="absolute top-4 right-4 p-2 hover:bg-orange-500/20 rounded-full transition-all">
+                className="absolute top-4 right-4 p-2 hover:bg-orange-500/20 rounded-full transition-all"
+              >
                 <X className="h-5 w-5 text-gray-400" />
               </button>
 
@@ -170,7 +187,7 @@ export default function Navigation() {
                 </div>
 
                 <div className="relative">
-                  <MessageSquare className="absolute left-top-3 h-5 w-5 text-orange-400" />
+                  <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
                   <textarea
                     name="message" rows="3"
                     value={formData.message}
@@ -205,13 +222,6 @@ export default function Navigation() {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes slideIn {
-          from { opacity: 0; transform: translateX(-20px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-      `}</style>
     </>
   );
 }

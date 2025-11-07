@@ -53,17 +53,14 @@ export default function Contact() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
-            <Phone className="h-6 w-6 text-emerald-400 animate-pulse" />
-            <span className="text-emerald-400 font-black tracking-wider">BOOK FREE SITE VISIT</span>
-          </div>
+        
           <h2 className="text-5xl md:text-7xl font-black text-white mb-4">
             One Call,
             <span className="block bg-gradient-to-r from-emerald-400 via-green-400 to-emerald-500 bg-clip-text text-transparent">
               Dream Home Ready
             </span>
           </h2>
-          <p className="text-xl text-gray-400">Only 3 slots left today • Free 3D design in 2 hours</p>
+        
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -71,9 +68,9 @@ export default function Contact() {
           <div className="space-y-8">
             <div className="space-y-6">
               {[
-                { icon: Phone, text: '+91 98765-43210' },
-                { icon: Mail, text: 'hello@jantafurniture.in' },
-                { icon: MapPin, text: 'Main Market, Jalandhar, Punjab' }
+                { icon: Phone, text: '+91-8169541472'},
+                { icon: Mail, text: 'Dummyheabhi@gmail.com' },
+                { icon: MapPin, text: 'Vasai Mumbai' }
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -94,7 +91,7 @@ export default function Contact() {
               <h3 className="text-2xl font-black text-white mb-4">What You Get FREE</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-emerald-400" /> Site visit + measurement</li>
-                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-emerald-400" /> 3D design in 2 hours</li>
+              
                 <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-emerald-400" /> Quotation in 10 minutes</li>
               </ul>
             </div>
