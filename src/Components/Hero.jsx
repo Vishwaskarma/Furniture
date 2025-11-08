@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Hammer, Sparkles, ChevronLeft, Star, Mail, X, Phone, User, Home, MessageSquare, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 // Placeholder images (FIXED 404)
 const projects = [
@@ -44,6 +45,7 @@ export default function Hero() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
+        toast.success('Sent! Check WhatsApp');
         setSent(true);
         setTimeout(() => {
           setShowEnquiryModal(false);

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, CheckCircle, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
@@ -10,7 +11,7 @@ export default function Contact() {
 
   const sendWhatsApp = () => {
     const text = `Hi WoodCraft!%0AI'm ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0AProject: ${formData.message || 'Full Home Design'}`;
-    window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+   window.open(`https://wa.me/918169541472?text=${text}`, '_blank');
   };
 
   const handleSubmit = async (e) => {
@@ -22,13 +23,13 @@ export default function Contact() {
 
     try {
       // EMAILJS - 3 IDs yahan daal dena
-      await emailjs.sendForm(
-        'YOUR_SERVICE_ID',     // ← daal yahan
-        'YOUR_TEMPLATE_ID',    // ← daal yahan
-        e.target,
-        'YOUR_PUBLIC_KEY'      // ← daal yahan
-      );
-
+   await emailjs.sendForm(
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,     // service_kbtek9i
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,   // template_h23iwym
+  e.target,                                      // form
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY     // 1V1cQ4_kf317pgzhZ
+);
+toast.success('Sent! Check WhatsApp');
       setIsSent(true);
       sendWhatsApp();
 
@@ -69,7 +70,7 @@ export default function Contact() {
             <div className="space-y-6">
               {[
                 { icon: Phone, text: '+91-8169541472'},
-                { icon: Mail, text: 'Dummyheabhi@gmail.com' },
+                { icon: Mail, text: 'dineshkvish662@gmail.com' },
                 { icon: MapPin, text: 'Vasai Mumbai' }
               ].map((item, i) => {
                 const Icon = item.icon;

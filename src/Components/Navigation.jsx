@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Hammer, Mail, Phone, User, MessageSquare, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +26,14 @@ export default function Navigation() {
     e.preventDefault();
     setSending(true);
 
-    emailjs.sendForm(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
-      e.target,
-      'YOUR_PUBLIC_KEY'
-    )
+emailjs.sendForm(
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  e.target,
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+)
     .then(() => {
+      toast.success('Sent! Check WhatsApp'); 
       setSent(true);
       setTimeout(() => {
         setShowPopup(false);

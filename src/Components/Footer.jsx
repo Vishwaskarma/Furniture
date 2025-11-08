@@ -74,7 +74,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3 group cursor-pointer">
                 <Mail className="h-4 w-4 text-green-400 mt-1 group-hover:scale-125 transition-transform" />
-                <span className="text-gray-300 hover:text-green-300 transition-colors text-sm">Dummyhaiabhi@gmail.com</span>
+                <span className="text-gray-300 hover:text-green-300 transition-colors text-sm">dineshkvish662@gmail.com</span>
               </div>
               <div className="flex items-start gap-3 group cursor-pointer">
                 <MapPin className="h-4 w-4 text-green-400 mt-1 group-hover:scale-125 transition-transform" />
