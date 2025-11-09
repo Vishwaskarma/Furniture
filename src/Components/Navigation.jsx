@@ -13,6 +13,7 @@ export default function Navigation() {
   });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -22,26 +23,89 @@ export default function Navigation() {
 
   const navItems = ['Home', 'About', 'Services', 'Gallery', 'Contact'];
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setSending(true);
+  // Form validation
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^[6-9]\d{9}$/.test(formData.phone.trim())) {
+      newErrors.phone = 'Enter valid 10-digit mobile number';
+    }
+    
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = 'Enter a valid email address';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-emailjs.sendForm(
-  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-  e.target,
-  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-)
-    .then(() => {
-      toast.success('Sent! Check WhatsApp'); 
-      setSent(true);
-      setTimeout(() => {
-        setShowPopup(false);
-        setSent(false);
-        setFormData({ name: '', phone: '', email: '', message: '' });
-      }, 2000);
-    })
-    .finally(() => setSending(false));
+  const sendEmail = () => {
+    if (!validateForm()) {
+      toast.error('Please fix the errors before submitting', {
+        duration: 3000,
+        position: 'top-center',
+      });
+      return;
+    }
+    
+    setSending(true);
+    
+    const templateParams = {
+      to_name: 'WoodCraft Team',
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message
+    };
+
+    emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    )
+      .then(() => {
+        setSending(false);
+        setSent(true);
+        toast.success('🎉 Enquiry Sent! We\'ll reach out to you shortly on WhatsApp', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            background: '#18181b',
+            color: '#fff',
+            border: '1px solid #f97316',
+          },
+        });
+        setTimeout(() => {
+          setShowPopup(false);
+          setSent(false);
+          setFormData({ name: '', phone: '', email: '', message: '' });
+          setErrors({});
+        }, 1500);
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        setSending(false);
+        toast.error('Failed to send. Please try again.', {
+          duration: 3000,
+          position: 'top-center',
+        });
+      });
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setSent(false);
+    setFormData({ name: '', phone: '', email: '', message: '' });
+    setErrors({});
   };
 
   return (
@@ -132,13 +196,20 @@ emailjs.sendForm(
 
       {/* ENQUIRY POPUP */}
       {showPopup && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <div className="relative w-full max-w-md bg-gradient-to-br from-zinc-900 to-black border border-orange-500/30 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              closePopup();
+            }
+          }}
+        >
+          <div className="relative w-full max-w-md bg-gradient-to-br from-zinc-900 to-black border border-orange-500/30 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300" onClick={(e) => e.stopPropagation()}>
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/10 blur-3xl"></div>
             
             <div className="relative p-8">
               <button
-                onClick={() => setShowPopup(false)}
+                onClick={closePopup}
                 className="absolute top-4 right-4 p-2 hover:bg-orange-500/20 rounded-full transition-all"
               >
                 <X className="h-5 w-5 text-gray-400" />
@@ -152,46 +223,57 @@ emailjs.sendForm(
                 <p className="text-gray-400 mt-2">Reply in 2 hours • 100% Free</p>
               </div>
 
-              <form onSubmit={sendEmail} className="space-y-4">
-                <input type="hidden" name="to_name" value="WoodCraft Team" />
-                
+              <div className="space-y-4">
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
                   <input
-                    type="text" name="name" required
+                    type="text"
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => {
+                      setFormData({...formData, name: e.target.value});
+                      if (errors.name) setErrors({...errors, name: ''});
+                    }}
                     placeholder="Your Name"
-                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all"
+                    className={`w-full pl-12 pr-4 py-3 bg-zinc-800/50 border ${errors.name ? 'border-red-500' : 'border-orange-500/30'} rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all`}
                   />
+                  {errors.name && <p className="text-red-400 text-xs mt-1 ml-1">{errors.name}</p>}
                 </div>
 
                 <div className="relative">
                   <Phone className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
                   <input
-                    type="tel" name="phone" required
+                    type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    placeholder="Phone Number"
-                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all"
+                    onChange={(e) => {
+                      setFormData({...formData, phone: e.target.value});
+                      if (errors.phone) setErrors({...errors, phone: ''});
+                    }}
+                    placeholder="Phone Number (10 digits)"
+                    maxLength="10"
+                    className={`w-full pl-12 pr-4 py-3 bg-zinc-800/50 border ${errors.phone ? 'border-red-500' : 'border-orange-500/30'} rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all`}
                   />
+                  {errors.phone && <p className="text-red-400 text-xs mt-1 ml-1">{errors.phone}</p>}
                 </div>
 
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
                   <input
-                    type="email" name="email"
+                    type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => {
+                      setFormData({...formData, email: e.target.value});
+                      if (errors.email) setErrors({...errors, email: ''});
+                    }}
                     placeholder="Email (optional)"
-                    className="w-full pl-12 pr-4 py-3 bg-zinc-800/50 border border-orange-500/30 rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all"
+                    className={`w-full pl-12 pr-4 py-3 bg-zinc-800/50 border ${errors.email ? 'border-red-500' : 'border-orange-500/30'} rounded-xl text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all`}
                   />
+                  {errors.email && <p className="text-red-400 text-xs mt-1 ml-1">{errors.email}</p>}
                 </div>
 
                 <div className="relative">
                   <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-orange-400" />
                   <textarea
-                    name="message" rows="3"
+                    rows="3"
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     placeholder="Bedroom ya kitchen?"
@@ -200,7 +282,7 @@ emailjs.sendForm(
                 </div>
 
                 <button
-                  type="submit"
+                  onClick={sendEmail}
                   disabled={sending}
                   className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black rounded-xl hover:shadow-lg hover:shadow-orange-500/50 hover:scale-105 transition-all flex items-center justify-center gap-3 disabled:opacity-70"
                 >
@@ -215,7 +297,7 @@ emailjs.sendForm(
                     </>
                   )}
                 </button>
-              </form>
+              </div>
 
               <p className="text-center text-xs text-gray-500 mt-4">
                 We reply on WhatsApp within 2 hours
