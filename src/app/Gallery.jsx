@@ -9,15 +9,14 @@ export default function Gallery() {
 
   useEffect(() => setMounted(true), []);
 
-  const projects = [
-    { id: 'dining',   label: 'Royal Oak Dining',     img: 'https://cdn.pixabay.com/photo/2017/03/28/12/10/chair-2181957_1280.jpg' },
-    { id: 'mandir',   label: 'Sheesham Mandir',      img: 'https://cdn.pixabay.com/photo/2017/08/02/01/01/living-room-2569318_1280.jpg' },
-    { id: 'center',   label: 'Marble Center Table',  img: 'https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181942_1280.jpg' },
-    { id: 'bed',      label: 'Teak King Bed',        img: 'https://cdn.pixabay.com/photo/2016/11/19/13/12/bed-1839179_1280.jpg' },
-    { id: 'sofa',     label: 'L-Shape Sofa Set',     img: 'https://cdn.pixabay.com/photo/2017/08/02/01/01/living-room-2569318_1280.jpg' },
-    { id: 'kitchen',  label: 'Modular Kitchen',      img: 'https://cdn.pixabay.com/photo/2017/03/28/12/10/chair-2181957_1280.jpg' }
-  ];
-
+const projects = [
+  { id: 'dining',   label: 'Royal Oak Dining',     img: '/gallaryimg/diminigtable.jpg' },
+  { id: 'mandir',   label: 'Sheesham Mandir',      img: '/gallaryimg/mandir.jpg' },
+  { id: 'center',   label: 'Wood Center Table',  img: '/gallaryimg/center_table.jpg' },
+  { id: 'bed',      label: 'Teak King Bed',        img: '/gallaryimg/bed.jpg' },
+  { id: 'sofa',     label: 'L-Shape Sofa Set',     img: '/gallaryimg/sofa.jpg' },
+  { id: 'kitchen',  label: 'Modular Kitchen',      img: '/gallaryimg/kitchen.jpg' }
+];
   return (
     <section id="gallery" className="py-20 lg:py-32 bg-black relative overflow-hidden">
       {/* Animated Orange Glows */}
@@ -67,8 +66,9 @@ export default function Gallery() {
               <div className="aspect-[4/3] overflow-hidden">
                 <img 
                   src={p.img} 
-                  alt={p.label} 
+                  alt={p.label}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
 
@@ -99,8 +99,6 @@ export default function Gallery() {
             </div>
           ))}
         </div>
-
-       
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export default function Services() {
       {/* ORANGE GLOW BACKGROUND – SAME AS HERO */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ export default function Services() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            21-day delivery • Free 3D design • Lifetime wood guarantee
+            Handcrafted Excellence • Premium Materials • Lifetime Guarantee
           </p>
         </div>
 
@@ -66,17 +66,14 @@ export default function Services() {
                 </p>
 
                 {/* CTA */}
-                <div className="flex items-center text-orange-400 font-bold group-hover:translate-x-3 transition-transform">
-                  <span className="text-lg">Get Free Quote</span>
-                  <ChevronRight className="h-6 w-6 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
+
               </div>
             </div>
           ))}
         </div>
 
         {/* BIG BOTTOM CTA */}
-      
+
       </div>
     </section>
   );
