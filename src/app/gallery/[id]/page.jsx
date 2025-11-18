@@ -4,12 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { X, ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight, Home, Star } from 'lucide-react';
 
-// Your actual gallery data with proper image paths
+// Gallery data - UPDATE FOLDER NAME HERE IF NEEDED
+const GALLERY_FOLDER = '/gallaryimg';  // Change this if your folder name is different
+
 const galleryData = {
   dining: {
     title: "Royal Oak Dining",
     images: [
-      '/gallaryimg/diminigtable.jpg',
+      `${GALLERY_FOLDER}/dining.jpg`,
     ],
     description: "Handcrafted royal oak dining table with intricate details",
     rating: "4.9"
@@ -17,7 +19,7 @@ const galleryData = {
   mandir: {
     title: "Sheesham Mandir",
     images: [
-      '/gallaryimg/mandir.jpg',
+      `${GALLERY_FOLDER}/mandir.jpg`,
     ],
     description: "Traditional sheesham wood mandir with brass fittings",
     rating: "4.8"
@@ -25,7 +27,7 @@ const galleryData = {
   center: {
     title: "Wood Center Table",
     images: [
-      '/gallaryimg/center_table.jpg',
+      `${GALLERY_FOLDER}/center_table.jpg`,
     ],
     description: "Elegant wooden center table with glass top",
     rating: "4.9"
@@ -33,7 +35,7 @@ const galleryData = {
   bed: {
     title: "Teak King Bed",
     images: [
-      '/gallaryimg/bed.jpg',
+      `${GALLERY_FOLDER}/bed.jpg`,
     ],
     description: "Solid teak king size bed with storage",
     rating: "5.0"
@@ -41,7 +43,7 @@ const galleryData = {
   sofa: {
     title: "L-Shape Sofa Set",
     images: [
-      '/gallaryimg/sofa.jpg',
+      `${GALLERY_FOLDER}/sofa.jpg`,
     ],
     description: "Modern L-shaped sofa set with premium upholstery",
     rating: "4.7"
@@ -49,7 +51,7 @@ const galleryData = {
   kitchen: {
     title: "Modular Kitchen",
     images: [
-      '/gallaryimg/kitchen.jpg',
+      `${GALLERY_FOLDER}/kitchen.jpg`,
     ],
     description: "Custom modular kitchen with smart storage",
     rating: "4.9"
@@ -314,6 +316,7 @@ export default function GalleryDetail() {
               {imageError ? (
                 <div className="text-center text-gray-500 p-8">
                   <p className="text-lg">Failed to load image</p>
+                  <p className="text-sm mt-2">Check the image path: {selectedImage}</p>
                   <button 
                     onClick={() => setImageError(false)}
                     className="text-orange-400 mt-2"

@@ -9,3 +9,5 @@ export default function robots() {
     sitemap: 'https://www.vishwakarmacarpenter.shop/sitemap.xml',
   };
 }
+
+
