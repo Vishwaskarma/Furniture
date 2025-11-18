@@ -1,135 +1,5 @@
-// // app/layout.jsx
-// import { Inter } from "next/font/google";
-// import "./globals.css";
-// import { Toaster } from "react-hot-toast";
 
-// const inter = Inter({ subsets: ["latin"] });
-
-// // ──────────────────────────────────────
-// // 1. METADATA (Title, Description, OG, etc.)
-// // ──────────────────────────────────────
-// export const metadata = {
-//   metadataBase: new URL('https://www.vishwakarmacarpenter.shop'),
-//   title: {
-//     default: "Vishwakarma Carpenter – Custom Furniture Maker in Mumbai",
-//     template: "%s | Vishwakarma Carpenter Mumbai",
-//   },
-//   description:
-//     "Expert furniture carpenter in Mumbai. Custom wooden wardrobes, beds, TV units, tables & modular kitchens. Call +91 81695 41472 for a free quote.",
-//   keywords:
-//     "furniture carpenter mumbai, custom furniture mumbai, wooden wardrobe, carpenter near me, vishwakarma carpenter, modular kitchen mumbai, carpenter nallasopara, vasai virar carpenter",
-//   robots: {
-//     index: true,
-//     follow: true,
-//     googleBot: {
-//       index: true,
-//       follow: true,
-//       'max-video-preview': -1,
-//       'max-image-preview': 'large',
-//       'max-snippet': -1,
-//     },
-//   },
-//   alternates: {
-//     canonical: "https://www.vishwakarmacarpenter.shop",
-//   },
-//   openGraph: {
-//     title: "Vishwakarma Carpenter – Custom Furniture Maker in Mumbai",
-//     description:
-//       "Handcrafted wooden furniture with 10+ years experience. Free site visit in Mumbai.",
-//     url: "https://www.vishwakarmacarpenter.shop",
-//     siteName: "Vishwakarma Carpenter",
-//     images: [
-//       {
-//         url: "https://www.vishwakarmacarpenter.shop/og-image.jpg",
-//         width: 1200,
-//         height: 630,
-//         alt: "Custom wooden wardrobe by Vishwakarma Carpenter",
-//       },
-//     ],
-//     locale: "hi_IN",
-//     type: "website",
-//   },
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Vishwakarma Carpenter Mumbai",
-//     description: "Custom wooden furniture – free quote in 5 mins!",
-//     images: ["https://www.vishwakarmacarpenter.shop/og-image.jpg"],
-//   },
-//   verification: {
-//     google: 'googlecc389cdb92b2893f',
-//   },
-// };
-
-// export const viewport = {
-//   width: "device-width",
-//   initialScale: 1,
-//   themeColor: "#10b981",
-// };
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="hi" className="scroll-smooth">
-//       <head>
-//         <link rel="icon" href="/favicon.ico" sizes="any" />
-//         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-//         <link rel="preload" href="/hero.jpg" as="image" />
-//         <link rel="alternate" hrefLang="hi" href="https://www.vishwakarmacarpenter.shop" />
-//         <link rel="alternate" hrefLang="en" href="https://www.vishwakarmacarpenter.shop/en" />
-        
-//         {/* LocalBusiness Schema – EMAIL UPDATED */}
-//         <script
-//           type="application/ld+json"
-//           dangerouslySetInnerHTML={{
-//             __html: JSON.stringify({
-//               "@context": "https://schema.org",
-//               "@type": "LocalBusiness",
-//               name: "Vishwakarma Carpenter",
-//               image: "https://www.vishwakarmacarpenter.shop/og-image.jpg",
-//               telephone: "+918169541472",
-//               email: "dineshkvish662@gmail.com", // ← UPDATED
-//               url: "https://www.vishwakarmacarpenter.shop",
-//               description:
-//                 "Custom furniture carpenter in Mumbai specializing in wooden wardrobes, beds, TV units, dining tables, and modular kitchens.",
-//               address: {
-//                 "@type": "PostalAddress",
-//                 streetAddress: "Dhaniv Baug, Ganesh Nagar, Nallasopara East",
-//                 addressLocality: "Vasai Virar",
-//                 addressRegion: "Maharashtra",
-//                 postalCode: "401209",
-//                 addressCountry: "IN",
-//               },
-//               geo: {
-//                 "@type": "GeoCoordinates",
-//                 latitude: 19.437723,
-//                 longitude: 72.861581,
-//               },
-//               openingHours: "Mo-Sa 09:00-19:00",
-//               priceRange: "₹₹",
-//               contactPoint: {
-//                 "@type": "ContactPoint",
-//                 telephone: "+918169541472",
-//                 contactType: "Customer Service",
-//                 areaServed: "Mumbai, Vasai Virar, Nallasopara",
-//                 availableLanguage: ["Hindi", "English", "Marathi"],
-//               },
-//               aggregateRating: {
-//                 "@type": "AggregateRating",
-//                 ratingValue: "4.9",
-//                 reviewCount: "150",
-//               },
-//             }),
-//           }}
-//         />
-//       </head>
-//       <body className={inter.className}>
-//         {children}
-//         <Toaster position="top-right" />
-//       </body>
-//     </html>
-//   );
-// }
-
-// app/layout.jsx
+// app/layout.jsx - ULTRA-OPTIMIZED FOR CARPENTER & FURNITURE SEARCHES
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
@@ -139,13 +9,193 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   metadataBase: new URL('https://www.vishwakarmacarpenter.shop'),
   title: {
-    default: "Best Carpenter Near Me in Mumbai | Carpenter Services | Vishwakarma Carpenter",
-    template: "%s | Carpenter Near Me - Vishwakarma Carpenter Mumbai",
+    default: "Carpenter | Carpenter Near Me | Furniture Carpenter Mumbai | Best Carpenter Services | Vishwakarma Carpenter",
+    template: "%s | Carpenter Mumbai - Vishwakarma",
   },
   description:
-    "Find the best carpenter near you in Mumbai. Professional furniture carpenter in Nallasopara, Vasai Virar. Custom wardrobes, beds, modular kitchens. Free quote. Call +91 81695 41472 now!",
-  keywords:
-    "carpenter near me, best carpenter in mumbai, carpenter mumbai, furniture carpenter, custom furniture carpenter, carpenter in nallasopara, carpenter in vasai virar, wooden furniture carpenter, modular kitchen carpenter, wardrobe carpenter, carpenter services, professional carpenter, experienced carpenter, affordable carpenter, custom carpenter, interior carpenter, home carpenter, wood carpenter, skilled carpenter, carpentry services mumbai, furniture maker, bed carpenter, tv unit carpenter, table carpenter, best carpenter near me, hire carpenter, carpenter for hire, custom carpentry, carpentry contractor, wooden bed carpenter, kitchen cabinet carpenter, dining table carpenter",
+    "🔨 #1 CARPENTER in Mumbai! Expert furniture carpenter, wood carpenter, interior carpenter. Custom wardrobes, modular kitchens, beds, tables, TV units, sofas, doors, windows. ✓ 15+ Years ✓ FREE Site Visit ✓ Best Prices. Call +91 81695 41472 - Top carpenter near you!",
+  keywords: [
+    // Primary Carpenter Keywords
+    "carpenter",
+    "carpenter near me",
+    "carpenter mumbai",
+    "best carpenter",
+    "furniture carpenter",
+    "wood carpenter",
+    "professional carpenter",
+    "expert carpenter",
+    "skilled carpenter",
+    "experienced carpenter",
+    
+    // Location-Based Carpenter
+    "carpenter in mumbai",
+    "carpenter in nallasopara",
+    "carpenter in vasai virar",
+    "carpenter in andheri",
+    "carpenter in borivali",
+    "carpenter in thane",
+    "carpenter in bandra",
+    "carpenter in malad",
+    "carpenter in kandivali",
+    "carpenter in powai",
+    "carpenter in goregaon",
+    "carpenter in dahisar",
+    "carpenter in mira road",
+    "carpenter in bhayander",
+    "carpenter in virar",
+    
+    // Service-Based Carpenter
+    "carpenter services",
+    "carpenter services mumbai",
+    "carpenter services near me",
+    "carpentry services",
+    "carpentry work",
+    "carpenter work",
+    "home carpenter",
+    "interior carpenter",
+    "residential carpenter",
+    "commercial carpenter",
+    "custom carpenter",
+    "affordable carpenter",
+    
+    // Furniture Carpenter Keywords
+    "furniture carpenter",
+    "furniture carpenter mumbai",
+    "furniture carpenter near me",
+    "custom furniture carpenter",
+    "furniture maker",
+    "furniture making",
+    "wooden furniture carpenter",
+    "furniture designer",
+    "furniture craftsman",
+    
+    // Wardrobe Carpenter
+    "wardrobe carpenter",
+    "wardrobe carpenter mumbai",
+    "wardrobe carpenter near me",
+    "custom wardrobe carpenter",
+    "wooden wardrobe carpenter",
+    "sliding wardrobe carpenter",
+    "almirah carpenter",
+    "cupboard carpenter",
+    "closet carpenter",
+    
+    // Kitchen Carpenter
+    "kitchen carpenter",
+    "kitchen carpenter mumbai",
+    "kitchen carpenter near me",
+    "modular kitchen carpenter",
+    "kitchen cabinet carpenter",
+    "kitchen furniture carpenter",
+    "kitchen interior carpenter",
+    
+    // Bed Carpenter
+    "bed carpenter",
+    "bed carpenter mumbai",
+    "bed carpenter near me",
+    "wooden bed carpenter",
+    "custom bed carpenter",
+    "bed frame carpenter",
+    "cot carpenter",
+    "double bed carpenter",
+    
+    // Table Carpenter
+    "table carpenter",
+    "dining table carpenter",
+    "center table carpenter",
+    "coffee table carpenter",
+    "study table carpenter",
+    "computer table carpenter",
+    "wooden table carpenter",
+    
+    // TV Unit Carpenter
+    "tv unit carpenter",
+    "tv unit carpenter mumbai",
+    "tv cabinet carpenter",
+    "tv stand carpenter",
+    "entertainment unit carpenter",
+    
+    // Sofa Carpenter
+    "sofa carpenter",
+    "sofa carpenter mumbai",
+    "wooden sofa carpenter",
+    "sofa set carpenter",
+    "sofa frame carpenter",
+    
+    // Door & Window Carpenter
+    "door carpenter",
+    "door carpenter mumbai",
+    "main door carpenter",
+    "wooden door carpenter",
+    "window carpenter",
+    "door frame carpenter",
+    
+    // Other Furniture Carpenter
+    "bookshelf carpenter",
+    "bookcase carpenter",
+    "shoe rack carpenter",
+    "dressing table carpenter",
+    "pooja mandir carpenter",
+    "temple carpenter",
+    "partition carpenter",
+    "false ceiling carpenter",
+    "wall panel carpenter",
+    
+    // Hire/Find Carpenter
+    "hire carpenter",
+    "hire carpenter mumbai",
+    "find carpenter",
+    "find carpenter near me",
+    "carpenter for hire",
+    "get carpenter",
+    "book carpenter",
+    "call carpenter",
+    "contact carpenter",
+    
+    // Quality Carpenter
+    "best carpenter in mumbai",
+    "top carpenter mumbai",
+    "professional carpenter mumbai",
+    "expert carpenter mumbai",
+    "reliable carpenter",
+    "trusted carpenter",
+    "certified carpenter",
+    "licensed carpenter",
+    
+    // Custom Work Carpenter
+    "custom furniture maker",
+    "bespoke furniture carpenter",
+    "made to order furniture",
+    "tailor made furniture",
+    "custom wood work",
+    "custom carpentry",
+    
+    // Material-Based
+    "wood work carpenter",
+    "wooden work carpenter",
+    "teak wood carpenter",
+    "plywood carpenter",
+    "laminate carpenter",
+    "veneer carpenter",
+    
+    // Style-Based
+    "modern furniture carpenter",
+    "contemporary furniture carpenter",
+    "classic furniture carpenter",
+    "traditional carpenter",
+    "minimalist carpenter",
+    
+    // General Terms
+    "vishwakarma carpenter",
+    "carpenter shop",
+    "carpenter workshop",
+    "furniture shop",
+    "furniture workshop",
+    "wood shop",
+    "carpentry contractor",
+    "furniture contractor"
+  ].join(", "),
+  
   robots: {
     index: true,
     follow: true,
@@ -161,17 +211,17 @@ export const metadata = {
     canonical: "https://www.vishwakarmacarpenter.shop",
   },
   openGraph: {
-    title: "Best Carpenter Near Me in Mumbai | Professional Furniture Carpenter",
+    title: "Carpenter | Best Furniture Carpenter in Mumbai | Vishwakarma Carpenter",
     description:
-      "Expert carpenter services in Mumbai. Custom wooden furniture, wardrobes, beds, modular kitchens. Free site visit & quote!",
+      "Mumbai's #1 CARPENTER - Expert furniture carpenter with 15+ years. Custom wardrobes, kitchens, beds, tables. FREE site visit!",
     url: "https://www.vishwakarmacarpenter.shop",
-    siteName: "Vishwakarma Carpenter - Best Carpenter Near Me",
+    siteName: "Vishwakarma Carpenter - Best Carpenter in Mumbai",
     images: [
       {
         url: "https://www.vishwakarmacarpenter.shop/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Best Carpenter in Mumbai - Professional Furniture Carpenter Services",
+        alt: "Best Carpenter in Mumbai - Expert Furniture Carpenter - Vishwakarma",
       },
     ],
     locale: "hi_IN",
@@ -179,8 +229,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Carpenter Near Me - Vishwakarma Carpenter Mumbai",
-    description: "Professional carpenter for custom furniture – free quote in 5 mins!",
+    title: "Best Carpenter in Mumbai | Expert Furniture Carpenter",
+    description: "Mumbai's #1 Carpenter - Custom furniture, wardrobes, kitchens. FREE quote!",
     images: ["https://www.vishwakarmacarpenter.shop/og-image.jpg"],
   },
   verification: {
@@ -199,22 +249,110 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://www.vishwakarmacarpenter.shop",
-    name: "Vishwakarma Carpenter - Best Carpenter Near Me in Mumbai",
+    name: "Vishwakarma Carpenter - Best Carpenter & Furniture Carpenter in Mumbai",
     alternateName: [
+      "Carpenter",
       "Carpenter Near Me",
-      "Best Carpenter in Mumbai",
       "Furniture Carpenter",
-      "Professional Carpenter",
+      "Best Carpenter in Mumbai",
       "Wood Carpenter",
-      "Carpenter Services",
-      "Custom Furniture Carpenter"
+      "Professional Carpenter",
+      "Expert Carpenter Mumbai",
+      "Carpenter Services Mumbai",
+      "Custom Furniture Carpenter",
+      "Wardrobe Carpenter",
+      "Kitchen Carpenter",
+      "Vishwakarma Carpenter Mumbai"
     ],
-    image: "https://www.vishwakarmacarpenter.shop/og-image.jpg",
+    image: [
+      "https://www.vishwakarmacarpenter.shop/og-image.jpg",
+      "https://www.vishwakarmacarpenter.shop/wardrobe.jpg",
+      "https://www.vishwakarmacarpenter.shop/kitchen.jpg",
+      "https://www.vishwakarmacarpenter.shop/bed.jpg"
+    ],
     telephone: "+918169541472",
     email: "dineshkvish662@gmail.com",
     url: "https://www.vishwakarmacarpenter.shop",
     description:
-      "Best carpenter near you in Mumbai. Professional furniture carpenter specializing in custom wooden furniture, wardrobes, beds, TV units, dining tables, and modular kitchens. Serving Nallasopara, Vasai Virar, and all of Mumbai with 10+ years experience.",
+      "Best carpenter and furniture carpenter in Mumbai. Professional carpentry services specializing in custom wooden furniture, wardrobes, modular kitchens, beds, tables, TV units, sofas, doors, and all wood work. Expert carpenter with 15+ years experience serving Nallasopara, Vasai Virar, Andheri, Borivali, Thane, Bandra, Malad, and all Mumbai areas. Call for FREE site visit and quote!",
+    
+    priceRange: "₹₹",
+    
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom Wardrobe Carpenter Services",
+          description: "Professional wardrobe carpenter for sliding, hinged & walk-in wardrobes"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Modular Kitchen Carpenter Services",
+          description: "Expert modular kitchen carpenter with L-shape, U-shape & straight designs"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Bed & Bedroom Furniture Carpenter",
+          description: "Custom bed carpenter for wooden beds, cots & bedroom furniture"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Dining & Center Table Carpenter",
+          description: "Professional table carpenter for dining, center & study tables"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "TV Unit & Entertainment Carpenter",
+          description: "Modern TV unit carpenter for wall mount & floor units"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Sofa & Seating Carpenter",
+          description: "Wooden sofa carpenter for custom sofa frames & seating"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Door & Window Carpenter Services",
+          description: "Main door carpenter for wooden doors, frames & windows"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pooja Mandir & Temple Carpenter",
+          description: "Custom pooja mandir carpenter for home temples"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Home Interior Carpentry Services",
+          description: "Complete home carpenter for all interior wood work"
+        }
+      }
+    ],
+    
     areaServed: [
       {
         "@type": "City",
@@ -223,13 +361,11 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "City",
-        name: "Nallasopara",
-        "@id": "https://en.wikipedia.org/wiki/Nallasopara"
+        name: "Nallasopara"
       },
       {
         "@type": "City",
-        name: "Vasai Virar",
-        "@id": "https://en.wikipedia.org/wiki/Vasai"
+        name: "Vasai Virar"
       },
       {
         "@type": "City",
@@ -238,8 +374,49 @@ export default function RootLayout({ children }) {
       {
         "@type": "City",
         name: "Borivali"
+      },
+      {
+        "@type": "City",
+        name: "Thane"
+      },
+      {
+        "@type": "City",
+        name: "Bandra"
+      },
+      {
+        "@type": "City",
+        name: "Malad"
+      },
+      {
+        "@type": "City",
+        name: "Kandivali"
+      },
+      {
+        "@type": "City",
+        name: "Powai"
+      },
+      {
+        "@type": "City",
+        name: "Goregaon"
+      },
+      {
+        "@type": "City",
+        name: "Dahisar"
+      },
+      {
+        "@type": "City",
+        name: "Mira Road"
+      },
+      {
+        "@type": "City",
+        name: "Bhayander"
+      },
+      {
+        "@type": "City",
+        name: "Virar"
       }
     ],
+    
     address: {
       "@type": "PostalAddress",
       streetAddress: "Dhaniv Baug, Ganesh Nagar, Nallasopara East",
@@ -248,66 +425,126 @@ export default function RootLayout({ children }) {
       postalCode: "401209",
       addressCountry: "IN",
     },
+    
     geo: {
       "@type": "GeoCoordinates",
       latitude: 19.437723,
       longitude: 72.861581,
     },
-    openingHours: "Mo-Sa 09:00-19:00",
-    priceRange: "₹₹",
+    
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "09:00",
+        closes: "19:00"
+      }
+    ],
+    
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+918169541472",
       contactType: "Customer Service",
-      areaServed: "Mumbai, Vasai Virar, Nallasopara, Andheri, Borivali",
+      contactOption: "TollFree",
+      areaServed: "IN",
       availableLanguage: ["Hindi", "English", "Marathi"],
     },
+    
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
+      bestRating: "5",
+      worstRating: "1",
       reviewCount: "150",
     },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "INR",
-      offers: [
+    
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Carpenter & Furniture Services",
+      itemListElement: [
         {
-          "@type": "Offer",
-          name: "Custom Wardrobe Carpenter",
-          description: "Professional wardrobe carpenter for custom wooden wardrobes"
+          "@type": "OfferCatalog",
+          name: "Wardrobe Carpenter Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Sliding Wardrobe Carpenter"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Hinged Wardrobe Carpenter"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Walk-in Closet Carpenter"
+              }
+            }
+          ]
         },
         {
-          "@type": "Offer",
-          name: "Modular Kitchen Carpenter",
-          description: "Expert modular kitchen carpenter services in Mumbai"
-        },
-        {
-          "@type": "Offer",
-          name: "Custom Bed & Furniture",
-          description: "Professional bed carpenter and furniture maker"
-        },
-        {
-          "@type": "Offer",
-          name: "TV Unit & Tables",
-          description: "Skilled carpenter for TV units, dining tables, and more"
+          "@type": "OfferCatalog",
+          name: "Kitchen Carpenter Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "L-Shape Kitchen Carpenter"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "U-Shape Kitchen Carpenter"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Parallel Kitchen Carpenter"
+              }
+            }
+          ]
         }
       ]
     },
+    
     knowsAbout: [
       "Carpentry",
-      "Furniture Making",
+      "Furniture Carpentry",
       "Wood Work",
+      "Furniture Making",
       "Custom Furniture",
-      "Modular Kitchen Design",
+      "Wardrobe Making",
+      "Kitchen Cabinet Making",
+      "Bed Manufacturing",
+      "Table Making",
       "Interior Carpentry",
-      "Wooden Wardrobes",
-      "Home Carpentry",
-      "Professional Carpentry Services"
+      "Residential Carpentry",
+      "Commercial Carpentry",
+      "Door Installation",
+      "Window Installation",
+      "Wood Finishing",
+      "Furniture Design",
+      "Home Improvement"
     ],
+    
     sameAs: [
       "https://www.facebook.com/vishwakarmacarpenter",
       "https://www.instagram.com/vishwakarmacarpenter"
-    ]
+    ],
+    
+    slogan: "Mumbai's Best Carpenter - Expert Furniture Carpenter for Your Dream Home"
   };
 
   const faqData = {
@@ -316,51 +553,98 @@ export default function RootLayout({ children }) {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How do I find a carpenter near me in Mumbai?",
+        name: "Who is the best carpenter near me in Mumbai?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Call Vishwakarma Carpenter at +91 81695 41472 for the best carpenter near you. We provide free site visits and quotes for all carpenter services in Mumbai, Nallasopara, and Vasai Virar."
+          text: "Vishwakarma Carpenter is the best carpenter near you in Mumbai with 15+ years of experience. We are expert furniture carpenters specializing in wardrobes, modular kitchens, beds, tables, and all wood work. Call +91 81695 41472 for FREE site visit."
         }
       },
       {
         "@type": "Question",
-        name: "Who is the best carpenter in Mumbai?",
+        name: "What does a furniture carpenter do?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Vishwakarma Carpenter is the best professional carpenter in Mumbai with 10+ years of experience in custom furniture making, wardrobes, modular kitchens, and all carpentry services."
+          text: "A furniture carpenter designs and builds custom wooden furniture including wardrobes, beds, tables, TV units, sofas, and modular kitchens. Vishwakarma Carpenter provides complete furniture carpentry services in Mumbai."
         }
       },
       {
         "@type": "Question",
-        name: "What services does a professional carpenter offer?",
+        name: "How much does a carpenter charge in Mumbai?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A professional carpenter offers custom wardrobes, beds, TV units, dining tables, modular kitchens, and other wooden furniture services. Vishwakarma Carpenter specializes in all these services."
+          text: "Carpenter charges vary based on project type, materials, and complexity. Vishwakarma Carpenter offers competitive rates with FREE site visits and quotes. Call +91 81695 41472 for accurate pricing for your furniture project."
         }
       },
       {
         "@type": "Question",
-        name: "How much does a carpenter cost in Mumbai?",
+        name: "Do you provide carpenter services in my area?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Carpenter costs vary based on project complexity and materials. Contact Vishwakarma Carpenter for a free quote and site visit to get accurate pricing for your custom furniture needs."
+          text: "Yes! Vishwakarma Carpenter provides services across Mumbai including Nallasopara, Vasai Virar, Andheri, Borivali, Thane, Bandra, Malad, Kandivali, Goregaon, and surrounding areas."
         }
       },
       {
         "@type": "Question",
-        name: "Where can I hire a skilled carpenter near me?",
+        name: "What furniture can a carpenter make?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Hire Vishwakarma Carpenter - a skilled and experienced carpenter in Mumbai, Nallasopara, and Vasai Virar. Call +91 81695 41472 for carpentry services near you."
+          text: "A professional carpenter can make wardrobes, modular kitchens, beds, dining tables, center tables, TV units, sofas, doors, windows, pooja mandirs, bookshelves, and all custom wooden furniture. Vishwakarma Carpenter specializes in all these services."
         }
       },
       {
         "@type": "Question",
-        name: "Do carpenters provide free estimates?",
+        name: "How do I hire a good carpenter?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes! Vishwakarma Carpenter provides free site visits and quotes for all carpentry and furniture services in Mumbai."
+          text: "Hire Vishwakarma Carpenter - a trusted, experienced carpenter in Mumbai. Check our portfolio, read reviews, and call +91 81695 41472 for FREE consultation. We provide quality workmanship with lifetime guarantee."
         }
+      },
+      {
+        "@type": "Question",
+        name: "Do carpenters make custom furniture?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Vishwakarma Carpenter specializes in custom furniture making. We create tailor-made furniture according to your exact requirements, space, and design preferences."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What is the best wood for furniture?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Best wood depends on budget and usage. Teak, oak, and sheesham are premium choices. Plywood with laminate/veneer is cost-effective. Vishwakarma Carpenter guides you in selecting the right material for your furniture."
+        }
+      }
+    ]
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Carpenter",
+        item: "https://www.vishwakarmacarpenter.shop"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Carpenter Services",
+        item: "https://www.vishwakarmacarpenter.shop/#services"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Gallery",
+        item: "https://www.vishwakarmacarpenter.shop/#gallery"
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Contact Carpenter",
+        item: "https://www.vishwakarmacarpenter.shop/#contact"
       }
     ]
   };
@@ -374,7 +658,7 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="hi" href="https://www.vishwakarmacarpenter.shop" />
         <link rel="alternate" hrefLang="en" href="https://www.vishwakarmacarpenter.shop/en" />
         
-        {/* LocalBusiness Schema */}
+        {/* LocalBusiness Schema - Enhanced */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -382,7 +666,7 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* FAQPage Schema */}
+        {/* FAQPage Schema - Enhanced */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -394,29 +678,31 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbData),
+          }}
+        />
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://www.vishwakarmacarpenter.shop"
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Gallery",
-                  item: "https://www.vishwakarmacarpenter.shop/gallery"
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: "Contact",
-                  item: "https://www.vishwakarmacarpenter.shop/contact"
-                }
-              ]
+              "@type": "Organization",
+              name: "Vishwakarma Carpenter",
+              url: "https://www.vishwakarmacarpenter.shop",
+              logo: "https://www.vishwakarmacarpenter.shop/logo.png",
+              description: "Professional carpenter and furniture carpenter in Mumbai",
+              telephone: "+918169541472",
+              email: "dineshkvish662@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Dhaniv Baug, Ganesh Nagar, Nallasopara East",
+                addressLocality: "Vasai Virar",
+                addressRegion: "Maharashtra",
+                postalCode: "401209",
+                addressCountry: "IN"
+              }
             }),
           }}
         />
