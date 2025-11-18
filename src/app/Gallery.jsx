@@ -10,12 +10,12 @@ export default function Gallery() {
   useEffect(() => setMounted(true), []);
 
 const projects = [
-  { id: 'dining',   label: 'Royal Oak Dining',     img: '/gallaryimg/diminigtable.jpg' },
-  { id: 'mandir',   label: 'Sheesham Mandir',      img: '/gallaryimg/mandir.jpg' },
-  { id: 'center',   label: 'Wood Center Table',  img: '/gallaryimg/center_table.jpg' },
-  { id: 'bed',      label: 'Teak King Bed',        img: '/gallaryimg/bed.jpg' },
-  { id: 'sofa',     label: 'L-Shape Sofa Set',     img: '/gallaryimg/sofa.jpg' },
-  { id: 'kitchen',  label: 'Modular Kitchen',      img: '/gallaryimg/kitchen.jpg' }
+  { id: 'dining',   label: 'Royal Oak Dining',     img: '/gallaryImg/dining.jpg' },
+  { id: 'mandir',   label: 'Sheesham Mandir',      img: '/gallaryImg/mandir.jpg' },
+  { id: 'center',   label: 'Wood Center Table',    img: '/gallaryImg/center_table.jpg' },
+  { id: 'bed',      label: 'Teak King Bed',        img: '/gallaryImg/bed.jpg' },
+  { id: 'sofa',     label: 'L-Shape Sofa Set',     img: '/gallaryImg/sofa.jpg' },
+  { id: 'kitchen',  label: 'Modular Kitchen',      img: '/gallaryImg/kitchen.jpg' }
 ];
   return (
     <section id="gallery" className="py-20 lg:py-32 bg-black relative overflow-hidden">
