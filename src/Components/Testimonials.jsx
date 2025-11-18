@@ -42,10 +42,7 @@ export default function Testimonials() {
           </span>
         </h2>
 
-        {/* Stats */}
-        <p className={`text-lg sm:text-xl text-gray-400 mb-16 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          21-day delivery • Lifetime Guarantee • 100% Mumbai Craftsmanship
-        </p>
+      
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
