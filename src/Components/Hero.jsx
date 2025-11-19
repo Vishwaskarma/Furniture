@@ -5,13 +5,13 @@ import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
 const projects = [
-  { id: 1, title: 'Modern Bedroom Setup', description: 'Complete bedroom furniture with AC installation', image: '/sliderImages/img1.jpeg', category: 'Bedroom' },
-  { id: 2, title: 'Custom Kitchen Cabinets', description: 'Full modular kitchen with premium finish', image: '/sliderImages/img2.jpeg', category: 'Kitchen' },
+  { id: 1, title: 'Modern Bedroom Setup', description: 'Complete bedroom furniture with AC installation', image: '/sliderImages/Bed.jpg', category: 'Bedroom' },
+  { id: 2, title: 'Custom Kitchen Cabinets', description: 'Full modular kitchen with premium finish', image: '/sliderImages/Kitchen.jpg', category: 'Kitchen' },
   { id: 3, title: 'Living Room Furniture', description: 'Elegant living room setup with storage', image: '/sliderImages/img3.jpeg', category: 'Living Room' },
-  { id: 4, title: 'Wardrobe Design', description: 'Spacious wardrobe with modern aesthetics', image: '/sliderImages/img4.jpeg', category: 'Storage' },
-  { id: 5, title: 'TV Unit & Storage', description: 'Wall-mounted TV unit with drawers', image: '/sliderImages/img5.jpeg', category: 'Entertainment' },
+  { id: 4, title: 'Wardrobe Design', description: 'Spacious wardrobe with modern aesthetics', image: '/sliderImages/wardrobe.jpg', category: 'Storage' },
+  { id: 5, title: 'TV Unit & Storage', description: 'Wall-mounted TV unit with drawers', image: '/sliderImages/tvunit.png', category: 'Entertainment' },
   { id: 6, title: 'Study Table Design', description: 'Functional workspace with bookshelf', image: '/sliderImages/img6.jpeg', category: 'Office' },
-  { id: 7, title: 'Dining Area Setup', description: 'Complete dining furniture arrangement', image: '/sliderImages/img7.jpeg', category: 'Dining' },
+  { id: 7, title: 'Dining Area Setup', description: 'Complete dining furniture arrangement', image: '/sliderImages/dining.png', category: 'Dining' },
   { id: 8, title: 'Kids Room Furniture', description: 'Colorful and functional kids bedroom', image: '/sliderImages/img8.jpeg', category: 'Kids Room' },
 ];
 
