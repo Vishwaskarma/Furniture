@@ -12,7 +12,7 @@ const projects = [
   { id: 5, title: 'TV Unit & Storage', description: 'Wall-mounted TV unit with drawers', image: '/sliderImages/tvunit.png', category: 'Entertainment' },
   { id: 6, title: 'Study Table Design', description: 'Functional workspace with bookshelf', image: '/sliderImages/studytable.png', category: 'Study Table' },
   { id: 7, title: 'Dining Area Setup', description: 'Complete dining furniture arrangement', image: '/sliderImages/dining.png', category: 'Dining' },
-  { id: 8, title: 'Kids Room Furniture', description: 'Colorful and functional kids bedroom', image: '/sliderImages/Kidsroom.png', category: 'Kids Room' },
+  { id: 8, title: 'Kids Room Furniture', description: 'Colorful and functional kids bedroom', image: '/sliderImages/kidsroom.png', category: 'Kids Room' },
 ];
 
 export default function Hero() {
