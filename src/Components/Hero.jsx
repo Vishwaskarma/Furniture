@@ -7,12 +7,12 @@ import toast from 'react-hot-toast';
 const projects = [
   { id: 1, title: 'Modern Bedroom Setup', description: 'Complete bedroom furniture with AC installation', image: '/sliderImages/Bed.jpg', category: 'Bedroom' },
   { id: 2, title: 'Custom Kitchen Cabinets', description: 'Full modular kitchen with premium finish', image: '/sliderImages/Kitchen.jpg', category: 'Kitchen' },
-  { id: 3, title: 'Living Room Furniture', description: 'Elegant living room setup with storage', image: '/sliderImages/img3.jpeg', category: 'Living Room' },
+  { id: 3, title: 'Living Room Furniture', description: 'Elegant living room setup with storage', image: '/sliderImages/furniture.png', category: 'Living Room' },
   { id: 4, title: 'Wardrobe Design', description: 'Spacious wardrobe with modern aesthetics', image: '/sliderImages/wardrobe.jpg', category: 'Storage' },
   { id: 5, title: 'TV Unit & Storage', description: 'Wall-mounted TV unit with drawers', image: '/sliderImages/tvunit.png', category: 'Entertainment' },
-  { id: 6, title: 'Study Table Design', description: 'Functional workspace with bookshelf', image: '/sliderImages/img6.jpeg', category: 'Office' },
+  { id: 6, title: 'Study Table Design', description: 'Functional workspace with bookshelf', image: '/sliderImages/studytable.png', category: 'Study Table' },
   { id: 7, title: 'Dining Area Setup', description: 'Complete dining furniture arrangement', image: '/sliderImages/dining.png', category: 'Dining' },
-  { id: 8, title: 'Kids Room Furniture', description: 'Colorful and functional kids bedroom', image: '/sliderImages/img8.jpeg', category: 'Kids Room' },
+  { id: 8, title: 'Kids Room Furniture', description: 'Colorful and functional kids bedroom', image: '/sliderImages/Kidsroom.png', category: 'Kids Room' },
 ];
 
 export default function Hero() {
