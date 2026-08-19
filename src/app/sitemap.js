@@ -1,13 +1,15 @@
 // app/sitemap.js
 export default function sitemap() {
   const baseUrl = 'https://www.vishwakarmacarpenter.shop';
-  
-  // Gallery categories
+
+  // Gallery categories — must match the keys in app/gallery/[id]/galleryData.js
   const galleryCategories = ['dining', 'mandir', 'center', 'bed', 'sofa', 'kitchen'];
-  
-  // Location-based carpenter pages for SEO
+
+  // Location-based carpenter pages — must match the keys in
+  // app/carpenter-in-[location]/page.jsx exactly (including hyphenation),
+  // or the sitemap will submit 404s to Google Search Console.
   const carpenterLocations = [
-    'nallasopara',
+    'nalla-sopara',
     'vasai-virar',
     'andheri',
     'borivali',
@@ -16,19 +18,21 @@ export default function sitemap() {
     'bandra',
     'malad',
     'kandivali',
-    'powai'
+    'powai',
+    'mira-road',
+    'virar',
+    'goregaon',
+    'jogeshwari',
   ];
 
-  // Generate gallery URLs
-  const galleryUrls = galleryCategories.map(category => ({
+  const galleryUrls = galleryCategories.map((category) => ({
     url: `${baseUrl}/gallery/${category}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
-  // Generate carpenter location URLs
-  const carpenterUrls = carpenterLocations.map(location => ({
+  const carpenterUrls = carpenterLocations.map((location) => ({
     url: `${baseUrl}/carpenter-in-${location}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
@@ -44,42 +48,15 @@ export default function sitemap() {
       priority: 1,
     },
 
-    // Main Gallery Page
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-
     // All Gallery Category Pages
     ...galleryUrls,
-
-    // Main Carpenter Services Page - High Priority
-    {
-      url: `${baseUrl}/carpenter-services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
 
     // All Location-Based Carpenter Pages
     ...carpenterUrls,
 
-    // Contact Page
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-
-    // About/Services Page (if you have one)
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+    // NOTE: /carpenter-services, /contact and /about were removed from this
+    // sitemap — there are no matching route files for them in src/app, so
+    // they were 404ing and getting flagged as sitemap errors in Search
+    // Console. Add them back here only once those pages actually exist.
   ];
 }

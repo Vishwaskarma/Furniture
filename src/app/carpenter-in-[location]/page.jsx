@@ -155,9 +155,19 @@ export default function LocationPage({ params }) {
         <p className="text-xl text-gray-300 mb-8 max-w-2xl">{location.fullDescription}</p>
 
         <div className="flex gap-4 flex-wrap">
-          <button className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-lg font-bold text-lg">
+          {/* FIX: this button had no href/onClick — it did nothing when
+              clicked. It's now a WhatsApp enquiry link pre-filled with the
+              visitor's location, matching the rest of the site. */}
+          <a
+            href={`https://wa.me/918169541472?text=${encodeURIComponent(
+              `Hi, I'm looking for a carpenter in ${location.name}. Please share a free quote.`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-lg font-bold text-lg"
+          >
             Get Free Quote
-          </button>
+          </a>
           <a
             href="tel:+918169541472"
             className="border-2 border-orange-500 px-8 py-3 rounded-lg font-bold text-lg flex items-center gap-2 hover:bg-orange-500/10 transition"
