@@ -36,7 +36,7 @@ export default function About() {
   }, []);
 
   const stats = [
-    { number: '15+', label: 'Years Experience', icon: Award },
+    { number: '32+', label: 'Years Experience', icon: Award },
     { number: '500+', label: 'Projects Done', icon: Zap },
     { number: '98%', label: 'Happy Clients', icon: Star },
     { number: '50+', label: 'Awards Won', icon: Shield }

@@ -20,7 +20,7 @@ export const metadata = {
     template: "%s | Vishwakarma Carpenter Mumbai",
   },
   description:
-    "Trusted carpenter in Mumbai for custom wardrobes, modular kitchens, beds, tables & TV units. 15+ years experience, free site visit, best prices. Call +91 81695 41472.",
+    "Trusted carpenter in Mumbai for custom wardrobes, modular kitchens, beds, tables & TV units. 32+ years experience, free site visit, best prices. Call +91 81695 41472.",
   keywords: [
     // Primary Carpenter Keywords
     "carpenter",
@@ -220,7 +220,7 @@ export const metadata = {
   openGraph: {
     title: "Carpenter | Best Furniture Carpenter in Mumbai | Vishwakarma Carpenter",
     description:
-      "Mumbai's #1 CARPENTER - Expert furniture carpenter with 15+ years. Custom wardrobes, kitchens, beds, tables. FREE site visit!",
+      "Mumbai's #1 CARPENTER - Expert furniture carpenter with 32+ years. Custom wardrobes, kitchens, beds, tables. FREE site visit!",
     url: "https://www.vishwakarmacarpenter.shop",
     siteName: "Vishwakarma Carpenter - Best Carpenter in Mumbai",
     images: [
@@ -281,7 +281,7 @@ export default function RootLayout({ children }) {
     email: "dineshkvish662@gmail.com",
     url: "https://www.vishwakarmacarpenter.shop",
     description:
-      "Best carpenter and furniture carpenter in Mumbai. Professional carpentry services specializing in custom wooden furniture, wardrobes, modular kitchens, beds, tables, TV units, sofas, doors, and all wood work. Expert carpenter with 15+ years experience serving Nallasopara, Vasai Virar, Andheri, Borivali, Thane, Bandra, Malad, and all Mumbai areas. Call for FREE site visit and quote!",
+      "Best carpenter and furniture carpenter in Mumbai. Professional carpentry services specializing in custom wooden furniture, wardrobes, modular kitchens, beds, tables, TV units, sofas, doors, and all wood work. Expert carpenter with 32+ years experience serving Nallasopara, Vasai Virar, Andheri, Borivali, Thane, Bandra, Malad, and all Mumbai areas. Call for FREE site visit and quote!",
     
     priceRange: "₹₹",
     
@@ -563,7 +563,7 @@ export default function RootLayout({ children }) {
         name: "Who is the best carpenter near me in Mumbai?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Vishwakarma Carpenter is the best carpenter near you in Mumbai with 15+ years of experience. We are expert furniture carpenters specializing in wardrobes, modular kitchens, beds, tables, and all wood work. Call +91 81695 41472 for FREE site visit."
+          text: "Vishwakarma Carpenter is the best carpenter near you in Mumbai with 32+ years of experience. We are expert furniture carpenters specializing in wardrobes, modular kitchens, beds, tables, and all wood work. Call +91 81695 41472 for FREE site visit."
         }
       },
       {

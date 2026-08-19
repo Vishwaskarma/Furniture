@@ -10,12 +10,12 @@ import Footer from '@/Components/Footer';
 
 // ✅ ADDED: Metadata for homepage (inherits from layout.js but you can override)
 export const metadata = {
-  title: "Vishwakarma Carpenter – Custom Furniture Maker in Mumbai | 15+ Years Experience",
+  title: "Vishwakarma Carpenter – Custom Furniture Maker in Mumbai 32+ Years Experience",
   description: "Premium custom furniture in Mumbai. Specializing in wooden wardrobes, modular kitchens, beds, TV units & dining tables. ✓ Free Site Visit ✓ 21-Day Delivery ✓ Lifetime Guarantee. Call +91 81695 41472",
   keywords: "carpenter mumbai, custom furniture mumbai, modular kitchen, wooden wardrobe, furniture maker vasai, nallasopara carpenter, carpenter near me",
   openGraph: {
     title: "Vishwakarma Carpenter – Premium Furniture in Mumbai",
-    description: "15+ years crafting custom furniture. Free quote in 10 minutes. Call now!",
+    description: "32+ years crafting custom furniture. Free quote in 10 minutes. Call now!",
     images: [
       {
         url: "/og-image.jpg",

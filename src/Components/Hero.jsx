@@ -259,7 +259,7 @@ export default function Hero() {
 
               <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-prose">
                 Turn ordinary wood into <strong className="text-orange-400">extraordinary spaces</strong>.
-                15+ years of Mumbai's finest craftsmanship – <strong className="text-orange-400">Lifetime Guarantee</strong> on every piece.
+                32+ years of Mumbai's finest craftsmanship – <strong className="text-orange-400">Lifetime Guarantee</strong> on every piece.
               </p>
 
               <div className="flex flex-wrap gap-3 md:gap-4">
@@ -278,7 +278,7 @@ export default function Hero() {
 
               <div className="flex flex-wrap gap-6 pt-6 border-t border-gray-800">
                 <div><div className="text-2xl font-bold text-orange-400">1,200+</div><div className="text-gray-500 text-xs">Homes Transformed</div></div>
-                <div><div className="text-2xl font-bold text-orange-400">15+</div><div className="text-gray-500 text-xs">Years of Mastery</div></div>
+                <div><div className="text-2xl font-bold text-orange-400">32+</div><div className="text-gray-500 text-xs">Years of Mastery</div></div>
                 <div><div className="text-2xl font-bold text-orange-400">100%</div><div className="text-gray-500 text-xs">Lifetime Guarantee</div></div>
               </div>
             </div>
@@ -358,7 +358,7 @@ export default function Hero() {
                     <Sparkles className="h-3 w-3 group-hover:rotate-12 transition-transform" />
                   </button>
                 </div>
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg shadow-orange-500/50 animate-bounce z-10">15+ Years</div>
+                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg shadow-orange-500/50 animate-bounce z-10">32+ Years</div>
               </div>
             </div>
           </div>
