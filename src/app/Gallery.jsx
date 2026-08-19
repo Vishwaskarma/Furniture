@@ -1,10 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Hammer, Sparkles, Star, ChevronRight } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Gallery() {
-  const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -51,9 +50,14 @@ const projects = [
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((p, i) => (
-            <div
+            // FIX: was a <div onClick={() => router.push(...)}> — on mobile
+            // a tap before JS finishes hydrating did nothing, and Google's
+            // crawler can't reliably follow onClick-based "links" to
+            // discover these gallery pages either. Using a real <Link> with
+            // an actual href fixes both.
+            <Link
+              href={`/gallery/${p.id}`}
               key={p.id}
-              onClick={() => router.push(`/gallery/${p.id}`)}
               className={`
                 group relative rounded-3xl overflow-hidden cursor-pointer
                 transition-all duration-700 transform
@@ -96,7 +100,7 @@ const projects = [
               {/* Border Glow */}
               <div className="absolute inset-0 rounded-3xl border-4 border-transparent group-hover:border-orange-500/60 transition-all duration-500 pointer-events-none"></div>
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/30 to-orange-600/30 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
